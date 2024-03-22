@@ -1,0 +1,16 @@
+basePath: ./test-data
+global:
+  paths:
+    required:
+      - "test-data/global/"
+environments:
+  development:
+    paths:
+      requiredValues:
+        - "test-data/envs/{{.Env.Name}}/values.yaml"
+kinds:
+  apps:
+    paths:
+      requiredValues:
+        - "test-data/apps/{{.Name}}/base-values.yaml"
+        - "test-data/apps/{{.Name}}/{{.Env.Name}}/values.yaml"
